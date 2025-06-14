@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Option Chain Banner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0f3d0f;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .banner {
+      background: linear-gradient(135deg, #0f3d0f 0%, #145214 100%);
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      padding: 40px;
+      display: flex;
+      gap: 40px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: -10%;
+      width: 120%;
+      height: 80%;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .image-wrapper {
+      flex-shrink: 0;
+      width: 280px;
+      height: 280px;
+      border: 8px solid #fbbf24;
+      border-radius: 50%;
+      overflow: hidden;
+      background: white;
+      position: relative;
+      z-index: 1;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .content {
+      flex: 1;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .title {
+      font-weight: 900;
+      font-size: 2.8rem;
+      color: #fbbf24;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .topics {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 14px;
+      padding: 20px 28px;
+      margin-bottom: 30px;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+    .topics ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+    .topics ul li {
+      margin-bottom: 10px;
+    }
+    .date {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #fbbf24;
+      margin-bottom: 6px;
+    }
+    .date-sub {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: white;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      font-weight: 900;
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+    }
+    .price .old-price {
+      text-decoration: line-through;
+      color: #a3a3a3;
+      font-size: 1.9rem;
+    }
+    .price .new-price {
+      color: #fbbf24;
+    }
+    .price .only {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: white;
+    }
+    .join-link {
+      color: #fb923c;
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-decoration: underline;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+    .query {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 30px;
+    }
+    .social-icons {
+      display: flex;
+      gap: 28px;
+      font-size: 1.9rem;
+    }
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover.whatsapp {
+      color: #25d366;
+    }
+    .social-icons a:hover.instagram {
+      color: #e4405f;
+    }
+    .social-icons a:hover.telegram {
+      color: #0088cc;
+    }
+    .social-icons svg {
+      width: 34px;
+      height: 34px;
+      fill: currentColor;
+    }
+    @media (max-width: 768px) {
+      .banner {
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+      .image-wrapper {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 24px;
+      }
+      .title {
+        font-size: 2rem;
+        text-align: center;
+      }
+      .topics {
+        font-size: 1rem;
+      }
+      .date {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      .date-sub {
+        font-size: 1rem;
+        text-align: center;
+      }
+      .price {
+        justify-content: center;
+        font-size: 2.5rem;
+      }
+      .join-link {
+        font-size: 1.1rem;
+        text-align: center;
+        display: block;
+      }
+      .query {
+        text-align: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner" role="region" aria-label="Option Chain Event Banner">
+    <div class="image-wrapper">
+      <img src="https://i.ibb.co/2dQXqZP/option-chain-speakers.png" alt="Option Chain Speakers" />
+    </div>
+    <div class="content">
+      <h1 class="title">OPTION CHAIN નો<br />ભવ્ય વેંબીનાર</h1>
+      <div class="topics" aria-label="Event topics">
+        <ul>
+          <li>Importance Of Option Chain</li>
+          <li>Calculation Of T.V. and I.V.</li>
+          <li>Selection Of Strike Price</li>
+          <li>Analysis Of Seller’s Data</li>
+          <li>Option Greeks</li>
+        </ul>
+      </div>
+      <div class="date">4 AUGUST 2025</div>
+      <div class="date-sub">STARTING AT 10:00 AM</div>
+      <div class="price" aria-label="Price details">
+        <span class="old-price">999/-</span>
+        <span class="new-price">99/-</span>
+        <span class="only">ONLY</span>
+      </div>
+      <a href="#" class="join-link">વેંબીનારમાં જોડાવા માટે અહીં ક્લિક કરો .</a>
+      <p class="query">FOR ANY QUERY +91 9898993297</p>
+      <nav class="social-icons" aria-label="Social media links">
+        <a href="https://wa.me/919898993297" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.37 0 12a11.94 11.94 0 001.64 6.04L0 24l5.96-1.64A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.48-8.52zm-8.52 17.04a8.4 8.4 0 01-4.5-1.3l-.32-.2-3.5.96.96-3.5-.2-.32a8.4 8.4 0 011.3-4.5 8.4 8.4 0 014.5-4.5 8.4 8.4 0 014.5 1.3 8.4 8.4 0 014.5 4.5 8.4 8.4 0 01-1.3 4.5 8.4 8.4 0 01-4.5 4.5z" />
+          </svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.5 1.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z" />
+          </svg>
+        </a>
+        <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="telegram" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M22 2L2 11.59l5.59 2.35L9 21l3.06-4.41L19.41 21 22 2z" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>
